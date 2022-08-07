@@ -29,23 +29,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(
-  songs: string,
-  singer: string,
-  album: string,
 
-) {
-  return { songs, singer, album};
-}
 
-const rows = [
-  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
-];
-
-export default function CustomizedTables() {
+export default function CustomizedTables(props:any) {
   return (
     <TableContainer component={Paper} sx={{ width: 600 }} style={{marginLeft:'120px',marginTop:"10px"}} >
       <Table aria-label="customized table">
@@ -55,17 +41,18 @@ export default function CustomizedTables() {
             <StyledTableCell align="right">Singer</StyledTableCell>
             <StyledTableCell align="right">Album</StyledTableCell>
             <StyledTableCell align="right">Status</StyledTableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {props.List.map((row:any) => (
             <StyledTableRow key={row.songs}>
               <StyledTableCell component="th" scope="row">
-                {row.songs}
+                {row.data.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.singer}</StyledTableCell>
-              <StyledTableCell align="right">{row.album}</StyledTableCell>
-              <StyledTableCell align="right"><Button color="secondary" size='small'>start</Button></StyledTableCell>
+              <StyledTableCell align="right">{row.data.artists.items[0].profile.name}</StyledTableCell>
+              <StyledTableCell align="right">{row.data.albumOfTrack.name}</StyledTableCell>
+              <StyledTableCell align="right"><Button color="secondary" size='small'>play</Button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
