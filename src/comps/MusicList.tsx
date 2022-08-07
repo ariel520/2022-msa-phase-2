@@ -52,7 +52,7 @@ export default function CustomizedTables(props:any) {
               </StyledTableCell>
               <StyledTableCell align="right">{row.data.artists.items[0].profile.name}</StyledTableCell>
               <StyledTableCell align="right">{row.data.albumOfTrack.name}</StyledTableCell>
-              <StyledTableCell align="right"><Button color="secondary" size='small'>play</Button></StyledTableCell>
+              <StyledTableCell align="right"><Button color="secondary" size='small' onClick={()=>{props.OnPlay(row.data.id)}}>play</Button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
