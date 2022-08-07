@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import {Button} from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -32,16 +33,16 @@ function createData(
   songs: string,
   singer: string,
   album: string,
-  start: number,
+
 ) {
-  return { songs, singer, album, start};
+  return { songs, singer, album};
 }
 
 const rows = [
-  createData('Frozen yoghurt', 'shjkdhf','shjsh',1),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh',1),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh',1),
-  createData('Frozen yoghurt', 'shjkdhf','shjsh',1),
+  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
+  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
+  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
+  createData('Frozen yoghurt', 'shjkdhf','shjsh'),
 ];
 
 export default function CustomizedTables() {
@@ -53,7 +54,7 @@ export default function CustomizedTables() {
             <StyledTableCell >Song</StyledTableCell>
             <StyledTableCell align="right">Singer</StyledTableCell>
             <StyledTableCell align="right">Album</StyledTableCell>
-            <StyledTableCell align="right">start</StyledTableCell>
+            <StyledTableCell align="right">Status</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -64,7 +65,7 @@ export default function CustomizedTables() {
               </StyledTableCell>
               <StyledTableCell align="right">{row.singer}</StyledTableCell>
               <StyledTableCell align="right">{row.album}</StyledTableCell>
-              <StyledTableCell align="right">{row.start}</StyledTableCell>
+              <StyledTableCell align="right"><Button color="secondary" size='small'>start</Button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
