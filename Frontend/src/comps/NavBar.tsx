@@ -19,7 +19,7 @@ const NavBar = () => {
                             letterSpacing: '.3rem',
                             color:  'inherit',
                             textDecoration: 'none',
-                            postion :'sticky'
+        
                         }}
                     >
                         Music App
@@ -30,4 +30,6 @@ const NavBar = () => {
 
     )
 }
+
+
 export default NavBar 
